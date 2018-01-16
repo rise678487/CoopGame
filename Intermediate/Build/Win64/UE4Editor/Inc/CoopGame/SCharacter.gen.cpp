@@ -20,6 +20,7 @@ void EmptyLinkFunctionForGeneratedCodeSCharacter() {}
 	COOPGAME_API UClass* Z_Construct_UClass_ASCharacter_NoRegister();
 	ENGINE_API UClass* Z_Construct_UClass_ACharacter();
 	UPackage* Z_Construct_UPackage__Script_CoopGame();
+	ENGINE_API UClass* Z_Construct_UClass_USpringArmComponent_NoRegister();
 	ENGINE_API UClass* Z_Construct_UClass_UCameraComponent_NoRegister();
 // End Cross Module References
 	void ASCharacter::StaticRegisterNativesASCharacter()
@@ -93,6 +94,7 @@ void EmptyLinkFunctionForGeneratedCodeSCharacter() {}
 				OuterClass->LinkChild(Z_Construct_UFunction_ASCharacter_MoveForward());
 				OuterClass->LinkChild(Z_Construct_UFunction_ASCharacter_MoveRight());
 
+				UProperty* NewProp_SpringArmComp = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("SpringArmComp"), RF_Public|RF_Transient|RF_MarkAsNative) UObjectProperty(CPP_PROPERTY_BASE(SpringArmComp, ASCharacter), 0x00100000000a001d, Z_Construct_UClass_USpringArmComponent_NoRegister());
 				UProperty* NewProp_CameraComp = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("CameraComp"), RF_Public|RF_Transient|RF_MarkAsNative) UObjectProperty(CPP_PROPERTY_BASE(CameraComp, ASCharacter), 0x00100000000a001d, Z_Construct_UClass_UCameraComponent_NoRegister());
 				OuterClass->AddFunctionToFunctionMapWithOverriddenName(Z_Construct_UFunction_ASCharacter_MoveForward(), "MoveForward"); // 607810071
 				OuterClass->AddFunctionToFunctionMapWithOverriddenName(Z_Construct_UFunction_ASCharacter_MoveRight(), "MoveRight"); // 698108187
@@ -104,6 +106,9 @@ void EmptyLinkFunctionForGeneratedCodeSCharacter() {}
 				MetaData->SetValue(OuterClass, TEXT("HideCategories"), TEXT("Navigation"));
 				MetaData->SetValue(OuterClass, TEXT("IncludePath"), TEXT("SCharacter.h"));
 				MetaData->SetValue(OuterClass, TEXT("ModuleRelativePath"), TEXT("Public/SCharacter.h"));
+				MetaData->SetValue(NewProp_SpringArmComp, TEXT("Category"), TEXT("Component"));
+				MetaData->SetValue(NewProp_SpringArmComp, TEXT("EditInline"), TEXT("true"));
+				MetaData->SetValue(NewProp_SpringArmComp, TEXT("ModuleRelativePath"), TEXT("Public/SCharacter.h"));
 				MetaData->SetValue(NewProp_CameraComp, TEXT("Category"), TEXT("Component"));
 				MetaData->SetValue(NewProp_CameraComp, TEXT("EditInline"), TEXT("true"));
 				MetaData->SetValue(NewProp_CameraComp, TEXT("ModuleRelativePath"), TEXT("Public/SCharacter.h"));
@@ -113,7 +118,7 @@ void EmptyLinkFunctionForGeneratedCodeSCharacter() {}
 		check(OuterClass->GetClass());
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(ASCharacter, 1801125641);
+	IMPLEMENT_CLASS(ASCharacter, 1981288662);
 	static FCompiledInDefer Z_CompiledInDefer_UClass_ASCharacter(Z_Construct_UClass_ASCharacter, &ASCharacter::StaticClass, TEXT("/Script/CoopGame"), TEXT("ASCharacter"), false, nullptr, nullptr, nullptr);
 	DEFINE_VTABLE_PTR_HELPER_CTOR(ASCharacter);
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

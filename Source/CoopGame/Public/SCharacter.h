@@ -8,6 +8,7 @@
 
 
 class UCameraComponent;
+class USpringArmComponent;
 UCLASS()
 class COOPGAME_API ASCharacter : public ACharacter
 {
@@ -29,6 +30,8 @@ protected:
 public:
 	UPROPERTY(VisibleAnywhere,BlueprintReadOnly,Category = "Component")
 		UCameraComponent* CameraComp;
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Component")
+		USpringArmComponent* SpringArmComp;
 public:	
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
