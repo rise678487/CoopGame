@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <None Include="..\..\CoopGame.uproject" />
+    <Filter Include="Source">
+      <UniqueIdentifier>{F06CD1E1-1150-42F6-8BB8-EF4E50802997}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Source\CoopGame.Target.cs">
+      <Filter>Source</Filter>
+    </None>
+    <None Include="..\..\Source\CoopGameEditor.Target.cs">
+      <Filter>Source</Filter>
+    </None>
+    <Filter Include="Config">
+      <UniqueIdentifier>{AE688C9B-867D-4D5A-8AB9-4C62DE997105}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Config\DefaultEditor.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultEngine.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultGame.ini">
+      <Filter>Config</Filter>
+    </None>
+    <Filter Include="Source\CoopGame">
+      <UniqueIdentifier>{FAE82F07-FC18-4A23-9E1F-34A335FAAB7C}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Source\CoopGame\CoopGame.Build.cs">
+      <Filter>Source\CoopGame</Filter>
+    </None>
+    <ClCompile Include="..\..\Source\CoopGame\CoopGame.cpp">
+      <Filter>Source\CoopGame</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\CoopGame\CoopGame.h">
+      <Filter>Source\CoopGame</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\CoopGame\CoopGameGameModeBase.cpp">
+      <Filter>Source\CoopGame</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\CoopGame\CoopGameGameModeBase.h">
+      <Filter>Source\CoopGame</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Source\CoopGame\Public">
+      <UniqueIdentifier>{753b9784-70cd-4c8e-917f-07b409d71af1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\CoopGame\Private">
+      <UniqueIdentifier>{cfcf61ca-7834-45ad-aa26-8964668b19d4}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\Source\CoopGame\Public\SCharacter.h">
+      <Filter>Source\CoopGame\Public</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\Source\CoopGame\Private\SCharacter.cpp">
+      <Filter>Source\CoopGame\Private</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>
