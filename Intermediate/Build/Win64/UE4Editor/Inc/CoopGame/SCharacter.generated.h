@@ -15,6 +15,38 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 
 #define CoopGame_Source_CoopGame_Public_SCharacter_h_15_RPC_WRAPPERS \
  \
+	DECLARE_FUNCTION(execJumpEnd) \
+	{ \
+		P_FINISH; \
+		P_NATIVE_BEGIN; \
+		this->JumpEnd(); \
+		P_NATIVE_END; \
+	} \
+ \
+	DECLARE_FUNCTION(execJumpStart) \
+	{ \
+		P_FINISH; \
+		P_NATIVE_BEGIN; \
+		this->JumpStart(); \
+		P_NATIVE_END; \
+	} \
+ \
+	DECLARE_FUNCTION(execEndCrouch) \
+	{ \
+		P_FINISH; \
+		P_NATIVE_BEGIN; \
+		this->EndCrouch(); \
+		P_NATIVE_END; \
+	} \
+ \
+	DECLARE_FUNCTION(execBeginCrouch) \
+	{ \
+		P_FINISH; \
+		P_NATIVE_BEGIN; \
+		this->BeginCrouch(); \
+		P_NATIVE_END; \
+	} \
+ \
 	DECLARE_FUNCTION(execMoveRight) \
 	{ \
 		P_GET_PROPERTY(UFloatProperty,Z_Param_value); \
@@ -35,6 +67,38 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 
 
 #define CoopGame_Source_CoopGame_Public_SCharacter_h_15_RPC_WRAPPERS_NO_PURE_DECLS \
+ \
+	DECLARE_FUNCTION(execJumpEnd) \
+	{ \
+		P_FINISH; \
+		P_NATIVE_BEGIN; \
+		this->JumpEnd(); \
+		P_NATIVE_END; \
+	} \
+ \
+	DECLARE_FUNCTION(execJumpStart) \
+	{ \
+		P_FINISH; \
+		P_NATIVE_BEGIN; \
+		this->JumpStart(); \
+		P_NATIVE_END; \
+	} \
+ \
+	DECLARE_FUNCTION(execEndCrouch) \
+	{ \
+		P_FINISH; \
+		P_NATIVE_BEGIN; \
+		this->EndCrouch(); \
+		P_NATIVE_END; \
+	} \
+ \
+	DECLARE_FUNCTION(execBeginCrouch) \
+	{ \
+		P_FINISH; \
+		P_NATIVE_BEGIN; \
+		this->BeginCrouch(); \
+		P_NATIVE_END; \
+	} \
  \
 	DECLARE_FUNCTION(execMoveRight) \
 	{ \

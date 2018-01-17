@@ -14,8 +14,12 @@ PRAGMA_DISABLE_OPTIMIZATION
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
 void EmptyLinkFunctionForGeneratedCodeSCharacter() {}
 // Cross Module References
-	COOPGAME_API UFunction* Z_Construct_UFunction_ASCharacter_MoveForward();
+	COOPGAME_API UFunction* Z_Construct_UFunction_ASCharacter_BeginCrouch();
 	COOPGAME_API UClass* Z_Construct_UClass_ASCharacter();
+	COOPGAME_API UFunction* Z_Construct_UFunction_ASCharacter_EndCrouch();
+	COOPGAME_API UFunction* Z_Construct_UFunction_ASCharacter_JumpEnd();
+	COOPGAME_API UFunction* Z_Construct_UFunction_ASCharacter_JumpStart();
+	COOPGAME_API UFunction* Z_Construct_UFunction_ASCharacter_MoveForward();
 	COOPGAME_API UFunction* Z_Construct_UFunction_ASCharacter_MoveRight();
 	COOPGAME_API UClass* Z_Construct_UClass_ASCharacter_NoRegister();
 	ENGINE_API UClass* Z_Construct_UClass_ACharacter();
@@ -27,10 +31,78 @@ void EmptyLinkFunctionForGeneratedCodeSCharacter() {}
 	{
 		UClass* Class = ASCharacter::StaticClass();
 		static const TNameNativePtrPair<ANSICHAR> AnsiFuncs[] = {
+			{ "BeginCrouch", (Native)&ASCharacter::execBeginCrouch },
+			{ "EndCrouch", (Native)&ASCharacter::execEndCrouch },
+			{ "JumpEnd", (Native)&ASCharacter::execJumpEnd },
+			{ "JumpStart", (Native)&ASCharacter::execJumpStart },
 			{ "MoveForward", (Native)&ASCharacter::execMoveForward },
 			{ "MoveRight", (Native)&ASCharacter::execMoveRight },
 		};
 		FNativeFunctionRegistrar::RegisterFunctions(Class, AnsiFuncs, ARRAY_COUNT(AnsiFuncs));
+	}
+	UFunction* Z_Construct_UFunction_ASCharacter_BeginCrouch()
+	{
+		UObject* Outer = Z_Construct_UClass_ASCharacter();
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			ReturnFunction = new(EC_InternalUseOnlyConstructor, Outer, TEXT("BeginCrouch"), RF_Public|RF_Transient|RF_MarkAsNative) UFunction(FObjectInitializer(), nullptr, (EFunctionFlags)0x00080401, 65535);
+			ReturnFunction->Bind();
+			ReturnFunction->StaticLink();
+#if WITH_METADATA
+			UMetaData* MetaData = ReturnFunction->GetOutermost()->GetMetaData();
+			MetaData->SetValue(ReturnFunction, TEXT("ModuleRelativePath"), TEXT("Public/SCharacter.h"));
+#endif
+		}
+		return ReturnFunction;
+	}
+	UFunction* Z_Construct_UFunction_ASCharacter_EndCrouch()
+	{
+		UObject* Outer = Z_Construct_UClass_ASCharacter();
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			ReturnFunction = new(EC_InternalUseOnlyConstructor, Outer, TEXT("EndCrouch"), RF_Public|RF_Transient|RF_MarkAsNative) UFunction(FObjectInitializer(), nullptr, (EFunctionFlags)0x00080401, 65535);
+			ReturnFunction->Bind();
+			ReturnFunction->StaticLink();
+#if WITH_METADATA
+			UMetaData* MetaData = ReturnFunction->GetOutermost()->GetMetaData();
+			MetaData->SetValue(ReturnFunction, TEXT("ModuleRelativePath"), TEXT("Public/SCharacter.h"));
+#endif
+		}
+		return ReturnFunction;
+	}
+	UFunction* Z_Construct_UFunction_ASCharacter_JumpEnd()
+	{
+		UObject* Outer = Z_Construct_UClass_ASCharacter();
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			ReturnFunction = new(EC_InternalUseOnlyConstructor, Outer, TEXT("JumpEnd"), RF_Public|RF_Transient|RF_MarkAsNative) UFunction(FObjectInitializer(), nullptr, (EFunctionFlags)0x00080401, 65535);
+			ReturnFunction->Bind();
+			ReturnFunction->StaticLink();
+#if WITH_METADATA
+			UMetaData* MetaData = ReturnFunction->GetOutermost()->GetMetaData();
+			MetaData->SetValue(ReturnFunction, TEXT("ModuleRelativePath"), TEXT("Public/SCharacter.h"));
+#endif
+		}
+		return ReturnFunction;
+	}
+	UFunction* Z_Construct_UFunction_ASCharacter_JumpStart()
+	{
+		UObject* Outer = Z_Construct_UClass_ASCharacter();
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			ReturnFunction = new(EC_InternalUseOnlyConstructor, Outer, TEXT("JumpStart"), RF_Public|RF_Transient|RF_MarkAsNative) UFunction(FObjectInitializer(), nullptr, (EFunctionFlags)0x00080401, 65535);
+			ReturnFunction->Bind();
+			ReturnFunction->StaticLink();
+#if WITH_METADATA
+			UMetaData* MetaData = ReturnFunction->GetOutermost()->GetMetaData();
+			MetaData->SetValue(ReturnFunction, TEXT("ModuleRelativePath"), TEXT("Public/SCharacter.h"));
+#endif
+		}
+		return ReturnFunction;
 	}
 	UFunction* Z_Construct_UFunction_ASCharacter_MoveForward()
 	{
@@ -91,11 +163,19 @@ void EmptyLinkFunctionForGeneratedCodeSCharacter() {}
 				UObjectForceRegistration(OuterClass);
 				OuterClass->ClassFlags |= (EClassFlags)0x20900080u;
 
+				OuterClass->LinkChild(Z_Construct_UFunction_ASCharacter_BeginCrouch());
+				OuterClass->LinkChild(Z_Construct_UFunction_ASCharacter_EndCrouch());
+				OuterClass->LinkChild(Z_Construct_UFunction_ASCharacter_JumpEnd());
+				OuterClass->LinkChild(Z_Construct_UFunction_ASCharacter_JumpStart());
 				OuterClass->LinkChild(Z_Construct_UFunction_ASCharacter_MoveForward());
 				OuterClass->LinkChild(Z_Construct_UFunction_ASCharacter_MoveRight());
 
 				UProperty* NewProp_SpringArmComp = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("SpringArmComp"), RF_Public|RF_Transient|RF_MarkAsNative) UObjectProperty(CPP_PROPERTY_BASE(SpringArmComp, ASCharacter), 0x00100000000a001d, Z_Construct_UClass_USpringArmComponent_NoRegister());
 				UProperty* NewProp_CameraComp = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("CameraComp"), RF_Public|RF_Transient|RF_MarkAsNative) UObjectProperty(CPP_PROPERTY_BASE(CameraComp, ASCharacter), 0x00100000000a001d, Z_Construct_UClass_UCameraComponent_NoRegister());
+				OuterClass->AddFunctionToFunctionMapWithOverriddenName(Z_Construct_UFunction_ASCharacter_BeginCrouch(), "BeginCrouch"); // 3931858620
+				OuterClass->AddFunctionToFunctionMapWithOverriddenName(Z_Construct_UFunction_ASCharacter_EndCrouch(), "EndCrouch"); // 725868489
+				OuterClass->AddFunctionToFunctionMapWithOverriddenName(Z_Construct_UFunction_ASCharacter_JumpEnd(), "JumpEnd"); // 1282164962
+				OuterClass->AddFunctionToFunctionMapWithOverriddenName(Z_Construct_UFunction_ASCharacter_JumpStart(), "JumpStart"); // 2220455684
 				OuterClass->AddFunctionToFunctionMapWithOverriddenName(Z_Construct_UFunction_ASCharacter_MoveForward(), "MoveForward"); // 607810071
 				OuterClass->AddFunctionToFunctionMapWithOverriddenName(Z_Construct_UFunction_ASCharacter_MoveRight(), "MoveRight"); // 698108187
 				static TCppClassTypeInfo<TCppClassTypeTraits<ASCharacter> > StaticCppClassTypeInfo;
@@ -118,7 +198,7 @@ void EmptyLinkFunctionForGeneratedCodeSCharacter() {}
 		check(OuterClass->GetClass());
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(ASCharacter, 1981288662);
+	IMPLEMENT_CLASS(ASCharacter, 4261766740);
 	static FCompiledInDefer Z_CompiledInDefer_UClass_ASCharacter(Z_Construct_UClass_ASCharacter, &ASCharacter::StaticClass, TEXT("/Script/CoopGame"), TEXT("ASCharacter"), false, nullptr, nullptr, nullptr);
 	DEFINE_VTABLE_PTR_HELPER_CTOR(ASCharacter);
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

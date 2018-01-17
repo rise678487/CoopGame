@@ -26,6 +26,14 @@ protected:
 		void MoveForward(float value);
 	UFUNCTION()
 		void MoveRight(float value);
+	UFUNCTION()
+		void BeginCrouch();
+	UFUNCTION()
+		void EndCrouch();
+	UFUNCTION()
+		void JumpStart();
+	UFUNCTION()
+		void JumpEnd();
 
 public:
 	UPROPERTY(VisibleAnywhere,BlueprintReadOnly,Category = "Component")
